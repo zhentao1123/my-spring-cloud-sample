@@ -1,0 +1,10 @@
+spring:
+  #应用名称，集群名称需要一致
+  application.name: eureka-client
+  
+server:
+  port: 8001
+
+eureka:
+  #向该地址注册服务
+  client.serviceUrl.defaultZone: http://localhost:8010/eureka/
