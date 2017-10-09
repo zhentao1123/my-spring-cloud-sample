@@ -19,11 +19,11 @@ public class SampleController {
     @Autowired
     private DiscoveryClient client;
 
-    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
+    @RequestMapping(value = "/subtract" ,method = RequestMethod.GET)
+    public Integer subtract(@RequestParam Integer a, @RequestParam Integer b) {
         ServiceInstance instance = client.getLocalServiceInstance();
-        Integer r = a + b;
-        logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
+        Integer r = a - b;
+        logger.info("/subtract, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return r;
     }
     
