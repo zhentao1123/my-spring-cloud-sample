@@ -31,14 +31,8 @@ public class SampleController {
     
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
+    		//借由LoadBalancerClient及服务名称获得服务公布的访问地址，以访问服务
     		ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client-01");
-    		/*
-        String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/add";
-        HashMap<String, String> paramMap = Maps.newHashMap();
-        paramMap.put("a", a.toString());
-        paramMap.put("b", b.toString());
-        Integer result = restTemplate.getForObject(url, Integer.class, paramMap);
-        */
         String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/add?a="+a+"&b="+b;
         logger.debug(url);
         Integer result = restTemplate.getForObject(url, Integer.class);
@@ -47,6 +41,7 @@ public class SampleController {
     
     @RequestMapping(value = "/subtract" ,method = RequestMethod.GET)
     public Integer subtract(@RequestParam Integer a, @RequestParam Integer b) {
+    		//借由LoadBalancerClient及服务名称获得服务公布的访问地址，以访问服务	
     		ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client-02");
     		String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/subtract?a="+a+"&b="+b;
     		logger.debug(url);
