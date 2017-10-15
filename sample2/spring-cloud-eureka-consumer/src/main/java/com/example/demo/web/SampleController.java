@@ -40,6 +40,7 @@ public class SampleController {
         Integer result = restTemplate.getForObject(url, Integer.class, paramMap);
         */
         String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/add?a="+a+"&b="+b;
+        logger.debug(url);
         Integer result = restTemplate.getForObject(url, Integer.class);
         return result;
     }
@@ -48,7 +49,8 @@ public class SampleController {
     public Integer subtract(@RequestParam Integer a, @RequestParam Integer b) {
     		ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client-02");
     		String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/subtract?a="+a+"&b="+b;
-        Integer result = restTemplate.getForObject(url, Integer.class);
+    		logger.debug(url);
+    		Integer result = restTemplate.getForObject(url, Integer.class);
         return result;
     }
 }
