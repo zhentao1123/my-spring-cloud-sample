@@ -8,6 +8,7 @@ eureka:
   instance.hostname: localhost
   client:
     serviceUrl.defaultZone: http://localhost:8010/eureka/
+    #Standalone Mode
     register-with-eureka: false 
     fetch-registry: false
   #server:
