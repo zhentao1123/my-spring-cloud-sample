@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>spring-cloud-eureka-consumer-ribbon</artifactId>
+	<artifactId>spring-cloud-eureka-consumer-feign</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-cloud-eureka-consumer-ribbon</name>
+	<name>spring-cloud-eureka-consumer-feign</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
