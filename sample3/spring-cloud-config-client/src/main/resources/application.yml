@@ -1,0 +1,9 @@
+
+spring:
+  application.name: didispace
+  #application.name: client01
+
+server.port: 8025
+
+#直接访问/refresh以触发主动更新配置
+management.security.enabled: false
