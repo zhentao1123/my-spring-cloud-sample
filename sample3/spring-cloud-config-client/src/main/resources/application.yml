@@ -1,9 +1,10 @@
-
 spring:
-  application.name: didispace
-  #application.name: client01
+  application.name: client01
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:8030/
 
 server.port: 8025
 
-#直接访问/refresh以触发主动更新配置
-management.security.enabled: false
+management.security.enabled: false #直接访问/refresh以触发主动更新配置
